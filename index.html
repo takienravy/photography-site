@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yulia Dobronravova</title>
+<meta name="description" content="Photography" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-nav">
+    <a href="#/" class="logo">Yulia Dobronravova</a>
+    <nav class="nav-links">
+      <a href="#/index" class="nav-link">Index</a>
+      <button type="button" class="nav-link nav-link--button" id="contact-open">Contact</button>
+    </nav>
+  </header>
+
+  <main id="view-home" class="view view-home" hidden>
+    <div class="slide-stage" id="slide-stage">
+      <button type="button" class="slide-zone slide-zone--prev" id="zone-prev" aria-label="Previous image"></button>
+      <figure class="slide-figure">
+        <img id="slide-image" src="" alt="" draggable="false" />
+      </figure>
+      <button type="button" class="slide-zone slide-zone--next" id="zone-next" aria-label="Next image"></button>
+    </div>
+  </main>
+
+  <main id="view-index" class="view view-index" hidden>
+    <div class="index-grid" id="index-grid"></div>
+  </main>
+
+  <footer class="site-footer">© All rights reserved</footer>
+
+  <div class="overlay" id="lightbox" hidden>
+    <button type="button" class="nav-link nav-link--button overlay-close" id="lightbox-close">(Close)</button>
+    <button type="button" class="slide-zone slide-zone--prev" id="lightbox-zone-prev" aria-label="Previous image"></button>
+    <img id="lightbox-image" src="" alt="" draggable="false" />
+    <button type="button" class="slide-zone slide-zone--next" id="lightbox-zone-next" aria-label="Next image"></button>
+  </div>
+
+  <div class="overlay overlay--contact" id="contact-overlay" hidden>
+    <div class="overlay-backdrop" id="contact-backdrop"></div>
+    <div class="contact-panel">
+      <div class="contact-top">
+        <span class="logo logo--static">Yulia Dobronravova</span>
+        <button type="button" class="nav-link nav-link--button" id="contact-close">(Close)</button>
+      </div>
+      <p class="contact-text">Photographer based in Amsterdam.</p>
+      <p class="contact-text"><a href="mailto:contact@yuliadobronravova.com">contact@yuliadobronravova.com</a></p>
+    </div>
+  </div>
+
+  <script src="images.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
