@@ -33,6 +33,7 @@ button {
   color: inherit;
   cursor: pointer;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 img {
@@ -146,6 +147,7 @@ img {
   width: 50%;
   cursor: ew-resize;
   z-index: 5;
+  touch-action: manipulation;
 }
 
 .slide-zone--prev {
