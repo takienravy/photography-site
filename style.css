@@ -7,6 +7,7 @@
 
 * {
   box-sizing: border-box;
+  touch-action: manipulation; /* disables double-tap-to-zoom site-wide, keeps pinch-zoom and scrolling */
 }
 
 html, body {
@@ -18,6 +19,7 @@ html, body {
   font-family: "Inclusive Sans", sans-serif;
   font-style: italic;
   -webkit-font-smoothing: antialiased;
+  touch-action: manipulation;
 }
 
 a {
@@ -166,6 +168,7 @@ img {
 .index-grid {
   column-count: 5;
   column-gap: 6px;
+  column-fill: auto;
 }
 
 .index-grid img {
