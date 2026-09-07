@@ -166,26 +166,30 @@ img {
 }
 
 .index-grid {
-  column-count: 5;
-  column-gap: 6px;
-  column-fill: auto;
+  display: flex;
+  gap: 6px;
+}
+
+.index-column {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .index-grid img {
   width: 100%;
   height: auto;
-  margin-bottom: 6px;
   cursor: pointer;
-  break-inside: avoid;
 }
 
 @media (max-width: 860px) {
   .index-grid {
-    column-count: 2;
-    column-gap: 4px;
+    gap: 4px;
   }
-  .index-grid img {
-    margin-bottom: 4px;
+  .index-column {
+    gap: 4px;
   }
   .view-index {
     padding: 90px 8px 70px;
