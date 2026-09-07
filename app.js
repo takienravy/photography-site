@@ -42,8 +42,30 @@
   });
 
   // ---------- Index grid ----------
+  // Real column <div>s, images distributed round-robin, instead of CSS
+  // multi-column — avoids a cross-browser "column balancing" bug that
+  // could add a phantom gap to the top of later columns.
+  var MOBILE_BREAKPOINT = 860;
+  var currentColumnCount = null;
+
+  function columnCountForViewport() {
+    return window.innerWidth <= MOBILE_BREAKPOINT ? 2 : 5;
+  }
+
   function renderIndexGrid() {
-    if (indexGrid.childElementCount > 0) return; // build once
+    var columnCount = columnCountForViewport();
+    if (columnCount === currentColumnCount) return; // already correct, skip rebuild
+    currentColumnCount = columnCount;
+
+    indexGrid.innerHTML = "";
+    var columns = [];
+    for (var c = 0; c < columnCount; c++) {
+      var col = document.createElement("div");
+      col.className = "index-column";
+      indexGrid.appendChild(col);
+      columns.push(col);
+    }
+
     PHOTOS.forEach(function (photo, i) {
       var img = document.createElement("img");
       img.src = photo.src;
@@ -52,7 +74,7 @@
       img.addEventListener("click", function () {
         openLightbox(i);
       });
-      indexGrid.appendChild(img);
+      columns[i % columnCount].appendChild(img);
     });
   }
 
@@ -165,5 +187,11 @@
   }
 
   window.addEventListener("hashchange", render);
+  window.addEventListener("resize", function () {
+    // Only matters if the index grid is showing and the column count
+    // needs to change (e.g. rotating a phone, or resizing a browser
+    // window past the mobile breakpoint).
+    if (!viewIndex.hidden) renderIndexGrid();
+  });
   render();
 })();
