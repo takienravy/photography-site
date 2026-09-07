@@ -270,8 +270,10 @@ img {
     padding: 20px 20px;
   }
   .site-footer {
-    right: 20px;
-    bottom: 14px;
+    position: static;
+    text-align: right;
+    padding: 24px 20px 32px;
+    bottom: auto;
   }
   .slide-stage {
     padding: 90px 24px 60px;
