@@ -9,12 +9,12 @@ const PHOTOS = [
   { src: "images/web-8.jpg", alt: "children's sleds" },
   { src: "images/web-9.jpg", alt: "russian town in winter in black and white" },
   { src: "images/web-28.jpg", alt: "conservatory cafe exterior" },
-  { src: "images/web-21.jpg", alt: "yellow tomatoes" },
   { src: "images/web-27.jpg", alt: "black and white interior" },
   { src: "images/web-29.jpg", alt: "cherry compote" },
   { src: "images/web-4.jpg", alt: "black and white tree branches with fruit" },
   { src: "images/web-24.jpg", alt: "ivy growing" },
   { src: "images/web-11.jpg", alt: "birch trees in winter in black and white" },
   { src: "images/web-19.jpg", alt: "kitchen interior" },  
+  { src: "images/web-21.jpg", alt: "yellow tomatoes" },
   { src: "images/web-18.jpg", alt: "fallen tree over pond" },
 ];
